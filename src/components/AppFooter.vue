@@ -120,19 +120,17 @@ export default {
                     <span class="title-links">DC COMICS</span>
                     <ul>
                         <li 
-                            v-for="item in comicsLink"
-                            class="item-link"
+                             v-for="item in comicsLink" 
                         >
-                            {{ item.name }}
+                            <a href="#" class="item-link">{{ item.name }}</a>
                         </li>
                     </ul>
                     <span class="title-links">SHOP</span>
                     <ul>
                         <li 
                             v-for="item in shopLink"
-                            class="item-link"
                         >
-                            {{ item.name }}
+                            <a href="#" class="item-link">{{ item.name }}</a> 
                         </li>
                     </ul>
                 </div>
@@ -141,9 +139,8 @@ export default {
                     <ul>
                         <li 
                             v-for="item in dcLink"
-                            class="item-link"
                         >
-                            {{ item.name }}
+                            <a href="#" class="item-link">{{ item.name }}</a>
                         </li>
                     </ul>
                 </div>
@@ -152,9 +149,8 @@ export default {
                     <ul>
                         <li 
                             v-for="item in sitesLink"
-                            class="item-link"
                         >
-                            {{ item.name }}
+                            <a href="#" class="item-link">{{ item.name }}</a>
                         </li>
                     </ul>
                 </div>
@@ -206,6 +202,7 @@ export default {
                         .item-link{
                             color: $lightgrey-color;
                             font-size: 0.9rem;
+                            text-decoration: none;
                         }
                     }
                 }
