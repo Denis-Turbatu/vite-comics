@@ -77,6 +77,7 @@ export default {
 
 <style lang="scss" scoped>
     @use "../style/partials/mixin" as *;
+    @use "../style/partials/variables" as *;
 
     .container{
         @include container(1180px, auto);
@@ -87,8 +88,14 @@ export default {
             display: flex;
             gap: 1.6rem;
             a{
-                color: #1c1c1c;
+                color: $darkgrey-color;
                 text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 600;
+
+                &.active{
+                    color: $blue-color;
+                }
             }
         }
     }
