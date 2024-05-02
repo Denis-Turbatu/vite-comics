@@ -74,6 +74,8 @@ export default {
             .comics-section{
                 background-color: $blue-color;
                 padding: 70px 0;
+                position: relative;
+                z-index: 1;
                 .container{
                 @include container(1280px, auto);
                 @include flex(row, center, center);

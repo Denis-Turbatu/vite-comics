@@ -18,7 +18,90 @@ export default {
                 {
                     img: "periscope",
                 },
-            ]
+            ],
+            comicsLink: [
+                {
+                    name: "Characters",
+                },
+                {
+                    name: "Comics",
+                },
+                {
+                    name: "Movies",
+                },
+                {
+                    name: "Tv",
+                },
+                {
+                    name: "Games",
+                },
+                {
+                    name: "Videos",
+                },
+                {
+                    name: "News",
+                },
+            ],
+            shopLink: [
+                {
+                    name: "Shop DC",
+                },
+                {
+                    name: "Shop DC Collectibles",
+                },
+            ],
+            dcLink: [
+                {
+                    name: "Therm of use",
+                },
+                {
+                    name: "Privacy policy(New)",
+                },
+                {
+                    name: "Ad Choises",
+                },
+                {
+                    name: "Advertising",
+                },
+                {
+                    name: "Jobs",
+                },
+                {
+                    name: "Subscription",
+                },
+                {
+                    name: "Talent Workshop",
+                },
+                {
+                    name: "CPSC Certification",
+                },
+                {
+                    name: "Ratings",
+                },
+                {
+                    name: "Shop Help",
+                },
+                {
+                    name: "Contact Us",
+                },
+            ],
+            sitesLink: [
+                {
+                    name: "DC",
+                },
+                {
+                    name: "MAD Magazzine",
+                },
+                {
+                    name: "DC Kids",
+                },
+                {
+                    name: "DC Universe",
+                },
+                {
+                    name: "DC Power Visa",
+                },
+            ],
         }
     },
     methods: {
@@ -30,16 +113,61 @@ export default {
 </script>
 
 <template>
-    <footer>
-        <div class="link">
-
+    <div class="footer-banner">
+        <div class="container">
+            <div class="links-list">
+                <div class="col">
+                    <span class="title-links">DC COMICS</span>
+                    <ul>
+                        <li 
+                            v-for="item in comicsLink"
+                            class="item-link"
+                        >
+                            {{ item.name }}
+                        </li>
+                    </ul>
+                    <span class="title-links">SHOP</span>
+                    <ul>
+                        <li 
+                            v-for="item in shopLink"
+                            class="item-link"
+                        >
+                            {{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <span class="title-links">DC</span>
+                    <ul>
+                        <li 
+                            v-for="item in dcLink"
+                            class="item-link"
+                        >
+                            {{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <span class="title-links">SITES</span>
+                    <ul>
+                        <li 
+                            v-for="item in sitesLink"
+                            class="item-link"
+                        >
+                            {{ item.name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <img src="../assets/img/dc-logo-bg.png" alt="">
         </div>
-
+    </div>
+    <footer>
         <div class="social">
             <div class="container">
                 <a href="#" class="sign-up">SIGN-UP  NOW!</a>
                 <div class="social-links">
-                    <span>FOLLOW US</span>
+                    <span class="title-links">FOLLOW US</span>
                     <a
                         href=""
                         v-for="item in links"
@@ -56,8 +184,52 @@ export default {
     @use "../style/partials/mixin" as *;
     @use "../style/partials/variables" as *;
 
+    .footer-banner{
+        background-color: $jumbo-color;
+        .container{
+            position: relative;
+            @include container(1280px, auto);
+            @include flex(row, space-between, center);
+            .links-list{
+                width: 40%;
+                @include flex(row, space-between, start);
+                .col{
+                    margin: 50px 0;
+                    width: calc(100% / 3 - 8px);
+                    .title-links{
+                        color: $white-color;
+                    }
+
+                    ul{
+                        list-style-type: none;
+                        margin-top: 15px;
+                        .item-link{
+                            color: $lightgrey-color;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+            img{
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+
+    footer, .col{
+        .title-links{
+            color: $blue-color;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+    }
+
     footer{
         background-color: $grey-color;
+        position: relative;
+        z-index: 1;
         
         .social{
             padding: 40px;
@@ -77,13 +249,6 @@ export default {
                 .social-links{
                     @include flex(row, center, center);
                     gap: 10px;
-
-                    span{
-                        color: $blue-color;
-                        font-weight: 600;
-                        font-size: 1.5rem;
-                        margin-right: 20px;
-                    }
                 }
 
                 
