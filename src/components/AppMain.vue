@@ -31,7 +31,7 @@ export default {
     imgPath(item) {
         return new URL(`../assets/img/${item.img}`, import.meta.url).href;
     },
-}
+    }
 }
 </script>
 

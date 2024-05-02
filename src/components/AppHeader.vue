@@ -43,13 +43,17 @@ export default {
                     title: "shop",
                     isActive: false,
                 },
-            ]
+            ],
+            activeItem: null,
         }
     },
     methods: {
         imgPath: function(){
             return new URL(`../assets/img/dc-logo.png`, import.meta.url).href
-        }
+        },
+        activeToggle: function(index){
+            this.activeItem = index;
+        },
     },
 }
 </script>
@@ -63,9 +67,11 @@ export default {
 
             <nav>
                 <a
-                    href=""
+                    href="#"
                     v-for="item,index in menu"
-                    :class="{active: item.isActive}"
+                    key="i"
+                    :class="{active: index === activeItem}"
+                    @click="activeToggle(index)"
                 >
                     {{menu[index].title.toUpperCase()}}
                 </a>
