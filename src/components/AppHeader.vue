@@ -4,43 +4,43 @@ export default {
         return {
             menu:[
                 {
-                    title: "CHARACTERS",
+                    title: "characters",
                     isActive: false,
                 },
                 {
-                    title: "COMICS",
+                    title: "comics",
                     isActive: true,
                 },
                 {
-                    title: "MOVIES",
+                    title: "movies",
                     isActive: false,
                 },
                 {
-                    title: "TV",
+                    title: "tv",
                     isActive: false,
                 },
                 {
-                    title: "GAMES",
+                    title: "games",
                     isActive: false,
                 },
                 {
-                    title: "COLLECTIBLES",
+                    title: "collectibles",
                     isActive: false,
                 },
                 {
-                    title: "VIDEOS",
+                    title: "videos",
                     isActive: false,
                 },
                 {
-                    title: "FANS",
+                    title: "fans",
                     isActive: false,
                 },
                 {
-                    title: "NEWS",
+                    title: "news",
                     isActive: false,
                 },
                 {
-                    title: "SHOP",
+                    title: "shop",
                     isActive: false,
                 },
             ]
@@ -67,7 +67,7 @@ export default {
                     v-for="item,index in menu"
                     :class="{active: item.isActive}"
                 >
-                    {{menu[index].title}}
+                    {{menu[index].title.toUpperCase()}}
                 </a>
             </nav>
         </header>
@@ -80,10 +80,10 @@ export default {
     @use "../style/partials/variables" as *;
 
     .container{
-        @include container(1180px, auto);
+        @include container(1280px, auto);
         header{
         @include flex(row, space-between, center);
-        padding: 15px 0;
+        padding: 30px 0;
         nav {
             display: flex;
             gap: 1.6rem;
