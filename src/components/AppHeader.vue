@@ -101,6 +101,7 @@ export default {
 
                 &.active{
                     color: $blue-color;
+                    border-bottom: solid 5px $blue-color;
                 }
             }
         }
