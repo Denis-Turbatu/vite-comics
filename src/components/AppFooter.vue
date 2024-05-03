@@ -181,7 +181,9 @@ export default {
     @use "../style/partials/variables" as *;
 
     .footer-banner{
-        background-color: $jumbo-color;
+        background-image: url("../assets/img/footer-bg.jpg");
+        background-size: cover;
+        background-position: center;
         .container{
             position: relative;
             @include container(1280px, auto);

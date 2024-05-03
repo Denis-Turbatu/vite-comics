@@ -89,7 +89,7 @@ export default {
         @include container(1280px, auto);
         header{
         @include flex(row, space-between, center);
-        padding: 30px 0;
+        padding: 15px 0;
         nav {
             display: flex;
             gap: 1.6rem;
