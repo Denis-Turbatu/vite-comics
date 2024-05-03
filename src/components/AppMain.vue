@@ -42,7 +42,12 @@ export default {
     <main> 
             <div class="content"> 
                 <div class="container">
-                    <div v-for="comic in data">{{comic.series}}</div>
+                    <div class="row">
+                        <div class="col" v-for="comic in data">
+                            <img :src="`${comic.thumb}`" alt="">
+                            <span>{{comic.series}}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="comics-section">
@@ -72,6 +77,22 @@ export default {
                 padding: 50px 0;
                 .container{
                     @include container(1280px, auto);
+                    .row{
+                        @include container(1280px, auto);
+                        @include flex(row, space-between, start);
+                        flex-wrap: wrap;
+                        .col{ 
+                            width: calc(100% / 6 - 20px);
+                            img{
+                                height: 170px;
+                                width: 170px;
+                            }
+
+                            span{
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
                 }
             }
             .comics-section{
