@@ -1,4 +1,6 @@
 <script>
+import jsonData from "../assets/data/dc-comics.json";
+
 export default {
     data() {
         return {
@@ -23,8 +25,9 @@ export default {
                     img: `buy-dc-power-visa.svg`,
                     name: "comic shop location",
                 },
-            ]
-            
+            ],
+
+            data: jsonData,
         }
     },
     methods: {
@@ -39,7 +42,7 @@ export default {
     <main> 
             <div class="content"> 
                 <div class="container">
-                    <span> --> Content goes here! <-- </span>
+                    <div v-for="comic in data">{{comic.series}}</div>
                 </div>
             </div>
             <div class="comics-section">
