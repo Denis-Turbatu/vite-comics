@@ -40,6 +40,12 @@ export default {
 
 <template>
     <main> 
+            <div class="hero-section"> 
+                <div class="container">
+                    <span class="blue-tag"></span>
+                </div>
+            </div>
+
             <div class="content"> 
                 <div class="container">
                     <div class="row">
@@ -48,8 +54,11 @@ export default {
                             <span>{{comic.series}}</span>
                         </div>
                     </div>
+                    
+                    <a href="#" class="blue-tag">LOAD MORE</a>
                 </div>
             </div>
+
             <div class="comics-section">
                 <div class="container">
                     <span
@@ -77,6 +86,8 @@ export default {
                 padding: 50px 0;
                 .container{
                     @include container(1280px, auto);
+                    @include flex(column, center, center);
+
                     .row{
                         @include container(1280px, auto);
                         @include flex(row, space-between, start);
@@ -93,6 +104,15 @@ export default {
                             }
                         }
                     }
+
+                    .blue-tag{
+                        margin-top: 15px;
+                        padding: 15px 25px;
+                        background-color: $blue-color;
+                        color: white;
+                        text-decoration: none;
+                        font-size: 0.9rem;
+                    }
                 }
             }
             .comics-section{
@@ -101,19 +121,20 @@ export default {
                 position: relative;
                 z-index: 1;
                 .container{
-                @include container(1280px, auto);
-                @include flex(row, center, center);
-                gap: 10px;
-                img{
-                    max-width: 50px;
-                    max-height: 50px;
-                    margin-right: 10px;
-                }
-                .comics-item{
+                    @include container(1280px, auto);
                     @include flex(row, center, center);
-                    width: calc(100% / 5);
+                    gap: 10px;
+
+                    img{
+                        max-width: 50px;
+                        max-height: 50px;
+                        margin-right: 10px;
+                    }
+                    .comics-item{
+                        @include flex(row, center, center);
+                        width: calc(100% / 5);
+                    }
                 }
-            }
             }
     }
     
