@@ -42,7 +42,9 @@ export default {
     <main> 
             <div class="hero-section"> 
                 <div class="container">
-                    <span class="blue-tag"></span>
+                    <div class="tag">
+                        <span class="blue-tag">CURRENT SERIES</span>
+                    </div>
                 </div>
             </div>
 
@@ -80,6 +82,33 @@ export default {
         background-color: $darkgrey-color;
         color: $white-color;
 
+            .blue-tag{
+                margin-top: 15px;
+                padding: 15px 25px;
+                background-color: $blue-color;
+                color: white;
+                text-decoration: none;
+                font-size: 0.9rem;
+            }
+
+            .hero-section{
+                height: 500px;
+                background-image: url("../assets/img/jumbotron.jpg");
+                background-size: cover;
+                position: relative;
+                .container{
+                    @include container(1280px, auto);
+
+                    .tag{
+                        position: absolute;
+                        bottom: 0;
+                        transform: translateY(50%);
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+
             .content{
                 font-size: 1.6rem;
                 font-weight: 600;
@@ -103,15 +132,6 @@ export default {
                                 font-size: 0.9rem;
                             }
                         }
-                    }
-
-                    .blue-tag{
-                        margin-top: 15px;
-                        padding: 15px 25px;
-                        background-color: $blue-color;
-                        color: white;
-                        text-decoration: none;
-                        font-size: 0.9rem;
                     }
                 }
             }
